@@ -15,11 +15,17 @@ with open("6\input.txt", 'r') as file:
     del time[0]
     del distance[0]
     
-    time = [int(i) for i in time]
-    distance = [int(i) for i in distance]
-       
+    time = ''.join(time)
+    distance = ''.join(distance)
+
+    time_2 = []
+    distance_2 = []
+    
+    time_2.append(int(time))
+    distance_2.append(int(distance))
+
     i=0
-    for times in time:
+    for times in time_2:
         mm=0
         hold=0
         rem=0
@@ -28,11 +34,11 @@ with open("6\input.txt", 'r') as file:
             rem = times-hold
             mm = rem*hold
             hold+=1
-            if mm > distance[i]:
+            if mm > distance_2[i]:
                 win+=1
         i+=1
         total_wins.append(win)
 print(total_wins)    
-print(np.prod(total_wins))
+
             
         
